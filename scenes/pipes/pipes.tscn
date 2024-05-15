@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/pipes/pipes.gd" id="1_x761f"]
 [ext_resource type="PackedScene" uid="uid://c2nljeyouaiuc" path="res://scenes/pipe/pipe.tscn" id="2_rqxkw"]
 
-[node name="Pipes" type="Node2D"]
+[node name="Pipes" type="Node2D" groups=["pipes"]]
 script = ExtResource("1_x761f")
 
 [node name="Laser" parent="." instance=ExtResource("1_ar5mk")]

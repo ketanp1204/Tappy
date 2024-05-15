@@ -1,39 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dml7r10hitcwn"]
+[gd_scene load_steps=6 format=3 uid="uid://dml7r10hitcwn"]
 
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_m48h0"]
 [ext_resource type="Texture2D" uid="uid://cycjllp7w6be1" path="res://assets/background/rocks_2.png" id="1_rd6ly"]
 [ext_resource type="PackedScene" uid="uid://d0ai8o8d2jnyx" path="res://scenes/plane/plane.tscn" id="2_cpu0p"]
 [ext_resource type="PackedScene" uid="uid://1epqbxf4lydh" path="res://scenes/barrier/barrier.tscn" id="3_rlrdx"]
 [ext_resource type="PackedScene" uid="uid://bh77djj5rwmtq" path="res://scenes/pipes/pipes.tscn" id="4_xuti0"]
 
 [node name="Game" type="Node2D"]
-position = Vector2(230, 403)
+script = ExtResource("1_m48h0")
+pipes_scene = ExtResource("4_xuti0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(230, 403)
 texture = ExtResource("1_rd6ly")
 
 [node name="Plane" parent="." instance=ExtResource("2_cpu0p")]
-position = Vector2(-155, 21)
+position = Vector2(75, 424)
 
 [node name="Barrier" parent="." instance=ExtResource("3_rlrdx")]
-position = Vector2(-230, 464)
+position = Vector2(0, 867)
 
 [node name="Barrier2" parent="." instance=ExtResource("3_rlrdx")]
-position = Vector2(-234, -427)
+position = Vector2(-4, -24)
 
-[node name="Pipes" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(72, -12)
+[node name="SpawnUpper" type="Marker2D" parent="."]
+position = Vector2(540, 340)
 
-[node name="Pipes2" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(242, 96)
+[node name="SpawnLower" type="Marker2D" parent="."]
+position = Vector2(540, 540)
 
-[node name="Pipes3" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(420, 10)
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
 
-[node name="Pipes4" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(606, -70)
-
-[node name="Pipes5" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(786, 30)
-
-[node name="Pipes6" parent="." instance=ExtResource("4_xuti0")]
-position = Vector2(996, -10)
+[connection signal="on_plane_died" from="Plane" to="." method="_on_plane_died"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
