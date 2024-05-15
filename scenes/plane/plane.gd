@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-# Define a signal for the plane death
-signal on_plane_died
-
 # Get animation sprite 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -44,4 +41,4 @@ func die() -> void:
 		set_physics_process(false)
 		animated_sprite.stop()
 		# Emit the die signal 
-		on_plane_died.emit() 
+		SignalManager.on_plane_died.emit() 
