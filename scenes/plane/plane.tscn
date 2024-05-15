@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ai8o8d2jnyx"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ai8o8d2jnyx"]
 
 [ext_resource type="Texture2D" uid="uid://c35wcw7doym1e" path="res://assets/plane/planes_sheet.png" id="1_81lk6"]
 [ext_resource type="Script" path="res://scenes/plane/plane.gd" id="1_hknp1"]
@@ -35,6 +35,27 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1b7ss"]
 radius = 25.02
 
+[sub_resource type="Animation" id="Animation_g5nbr"]
+resource_name = "power"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.349066, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_itryp"]
+_data = {
+"power": SubResource("Animation_g5nbr")
+}
+
 [node name="Plane" type="CharacterBody2D"]
 script = ExtResource("1_hknp1")
 
@@ -47,3 +68,8 @@ frame_progress = 0.196256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1b7ss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_itryp")
+}
