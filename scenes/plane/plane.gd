@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-# Get animation sprite 
 @onready var animated_sprite = $AnimatedSprite2D
-
-# Get animation player
 @onready var animation_player = $AnimationPlayer
+@onready var engine_sound = $EngineSound
 
 # Constants for gravity and power applied to the plane 
 const GRAVITY: float = 1500.0
@@ -37,8 +35,11 @@ func fly(delta: float) -> void:
 		animation_player.play("power")
 
 func die() -> void:
-		# Stop the plane movement and animations
+		# Stop the plane movement
 		set_physics_process(false)
+		# Stop the engine sound
+		engine_sound.stop()
+		# Stop the plane animation
 		animated_sprite.stop()
 		# Emit the die signal 
 		SignalManager.on_plane_died.emit() 

@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var score_sound = $ScoreSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +23,7 @@ func _on_screen_exited():
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
 		ScoreManager.increment_score()
+		score_sound.play()
 
 # Handle plane and pipe collision
 func _on_pipe_body_entered(body):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbgfime8hpl0i"]
+[gd_scene load_steps=9 format=3 uid="uid://cbgfime8hpl0i"]
 
 [ext_resource type="Texture2D" uid="uid://ddxkg65btfhri" path="res://assets/background/sky.png" id="1_t8mec"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_waa6h"]
 [ext_resource type="LabelSettings" uid="uid://bq5xhlkixkxwt" path="res://assets/lg_red_72.tres" id="2_nwnmv"]
 [ext_resource type="LabelSettings" uid="uid://csnb1cu8ghub4" path="res://assets/lg_wh_48.tres" id="3_2hm3i"]
 [ext_resource type="LabelSettings" uid="uid://hhujucp2881y" path="res://assets/lg_red_32.tres" id="4_5eyad"]
+[ext_resource type="AudioStream" uid="uid://c83xj3gu0xv4k" path="res://assets/audio/bgm_menu.mp3" id="6_pkcgo"]
 
 [sub_resource type="Animation" id="Animation_ijqaq"]
 resource_name = "flash"
@@ -69,6 +70,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Space" type="Label" parent="MC"]
+self_modulate = Color(1, 1, 1, 0.0127211)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Press Spacebar 
@@ -100,3 +102,7 @@ libraries = {
 "": SubResource("AnimationLibrary_11fcn")
 }
 autoplay = "flash"
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pkcgo")
+autoplay = true

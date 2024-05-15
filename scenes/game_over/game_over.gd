@@ -3,6 +3,7 @@ extends Control
 @onready var go_over_label = $GoOverLabel
 @onready var space_label = $SpaceLabel
 @onready var timer = $Timer
+@onready var game_over_sound = $GameOverSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 func _on_plane_died() -> void:
 	show()
 	timer.start()
+	game_over_sound.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
