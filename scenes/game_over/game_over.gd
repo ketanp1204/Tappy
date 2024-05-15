@@ -17,7 +17,7 @@ func _on_plane_died() -> void:
 	game_over_sound.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if space_label.visible:
 		if Input.is_action_just_pressed("fly"):
 			GameManager.load_main_scene()
