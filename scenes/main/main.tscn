@@ -89,7 +89,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "0000"
+text = "0
+"
 label_settings = ExtResource("4_5eyad")
 horizontal_alignment = 2
 vertical_alignment = 1

@@ -15,6 +15,7 @@ extends Node2D
 func _ready():
 	SignalManager.on_plane_died.connect(_on_plane_died)
 	spawn_pipes()
+	ScoreManager.set_score(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
