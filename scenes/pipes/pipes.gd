@@ -21,7 +21,7 @@ func _on_screen_exited():
 # Handle plane and laser collision
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
-		pass
+		ScoreManager.increment_score()
 
 # Handle plane and pipe collision
 func _on_pipe_body_entered(body):
