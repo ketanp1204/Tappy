@@ -26,8 +26,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "GAME OVER
-"
+text = "खेल समाप्त"
 label_settings = ExtResource("1_7w8o4")
 
 [node name="SpaceLabel" type="Label" parent="."]
@@ -44,7 +43,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "PRESS SPACEBAR"
+text = "Spacebar दबाए"
 label_settings = ExtResource("1_7w8o4")
 
 [node name="Timer" type="Timer" parent="."]

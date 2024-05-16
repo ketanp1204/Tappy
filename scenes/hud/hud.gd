@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_score_updated() -> void:
-	label.text = str(ScoreManager.get_score())
+	label.text = HindiNumerals.get_hindi_num_string(ScoreManager.get_score())

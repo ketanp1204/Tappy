@@ -63,8 +63,8 @@ theme_override_constants/margin_bottom = 24
 [node name="Title" type="Label" parent="MC"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "TAPPY
-PLANE"
+text = "टैपि 
+प्लेन "
 label_settings = ExtResource("2_nwnmv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -73,8 +73,8 @@ vertical_alignment = 1
 self_modulate = Color(1, 1, 1, 0.0127211)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Press Spacebar 
-To Play"
+text = "खेलने के लिए   
+Spacebar दबाए"
 label_settings = ExtResource("3_2hm3i")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -83,7 +83,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-text = "High Score"
+text = "उच्चतम अंक"
 label_settings = ExtResource("4_5eyad")
 vertical_alignment = 1
 
@@ -91,8 +91,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "0
-"
+text = "0"
 label_settings = ExtResource("4_5eyad")
 horizontal_alignment = 2
 vertical_alignment = 1
