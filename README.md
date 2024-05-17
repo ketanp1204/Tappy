@@ -13,6 +13,8 @@ Features:
 * Basic UI
 
 Additional features implemented outside the course content:
+* Options Menu with volume control and exit button
+* Saving and loading options with a config file
+* Separate SFX and Music audio playback
 * Hindi font including a helper function to display numerals in Hindi
 
-Assets are sourced from free asset websites.
