@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://befyu3yimmr3x"]
+
+[ext_resource type="FontFile" uid="uid://bdyfu07e4qa3l" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_8ycs2"]
+
+[resource]
+default_font = ExtResource("1_8ycs2")
+default_font_size = 32

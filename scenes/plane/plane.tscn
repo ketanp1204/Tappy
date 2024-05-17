@@ -78,4 +78,6 @@ libraries = {
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7y7wk")
+volume_db = -35.0
 autoplay = true
+bus = &"SFX"

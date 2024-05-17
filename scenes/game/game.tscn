@@ -46,3 +46,4 @@ autostart = true
 [node name="ScrollingBg" parent="." instance=ExtResource("8_sygyr")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="load_options" from="CanvasLayer/HUD" to="." method="open_options"]

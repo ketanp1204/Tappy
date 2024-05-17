@@ -1,11 +1,10 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://csnb1cu8ghub4"]
 
-[ext_resource type="FontFile" uid="uid://bqvamee25f1lg" path="res://assets/fonts/InknutAntiqua-Regular.ttf" id="1_c2qi2"]
+[ext_resource type="FontFile" uid="uid://bdyfu07e4qa3l" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_m8lw7"]
 
 [resource]
-line_spacing = -40.0
-font = ExtResource("1_c2qi2")
-font_size = 32
+font = ExtResource("1_m8lw7")
+font_size = 48
 font_color = Color(0.909804, 0.917647, 1, 1)
 outline_size = 2
 outline_color = Color(0.368627, 0.592157, 0.917647, 1)

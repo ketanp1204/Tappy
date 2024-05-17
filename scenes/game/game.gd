@@ -3,17 +3,17 @@ extends Node2D
 # Get the pipes scene reference for instantiation
 @export var pipes_scene: PackedScene
 
-# Get the position markers for the pipes to be spawned
+
 @onready var spawn_upper = $SpawnUpper
 @onready var spawn_lower = $SpawnLower
-
-# Get the timer 
 @onready var spawn_timer = $SpawnTimer
 
+@onready var options_menu = $OptionsMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalManager.on_plane_died.connect(_on_plane_died)
+	SignalManager.close_options.connect(close_options)
 	spawn_pipes()
 	ScoreManager.set_score(0)
 
@@ -42,3 +42,11 @@ func _on_spawn_timer_timeout():
 # Stop the pipes movement when the player dies
 func _on_plane_died():
 	stop_pipes()
+
+
+func open_options():
+	options_menu.show()
+	options_menu.on_open()
+
+func close_options():
+	options_menu.hide()

@@ -22,6 +22,8 @@ position = Vector2(168, 0)
 
 [node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2iuej")
+volume_db = -35.0
+bus = &"SFX"
 
 [connection signal="body_exited" from="Laser" to="." method="_on_laser_body_exited"]
 [connection signal="body_entered" from="Lower" to="." method="_on_pipe_body_entered"]

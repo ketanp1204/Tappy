@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://521oylt07cpx"]
 
 [ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_naw6f"]
-[ext_resource type="LabelSettings" uid="uid://hhujucp2881y" path="res://assets/lg_red_32.tres" id="1_vcjcr"]
+[ext_resource type="LabelSettings" uid="uid://hhujucp2881y" path="res://assets/theme_settings/lg_label_red_32.tres" id="1_vcjcr"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -21,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
 
 [node name="Label" type="Label" parent="MC"]
 layout_mode = 2

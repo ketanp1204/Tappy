@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://esqsg7n1jumw"]
 
-[ext_resource type="LabelSettings" uid="uid://jvchq7ajd4p8" path="res://assets/lg_red_48.tres" id="1_7w8o4"]
 [ext_resource type="Script" path="res://scenes/game_over/game_over.gd" id="1_nqami"]
+[ext_resource type="LabelSettings" uid="uid://jvchq7ajd4p8" path="res://assets/theme_settings/lg_label_red_48.tres" id="2_3p51q"]
 [ext_resource type="AudioStream" uid="uid://bcxljo6fk3gdl" path="res://assets/audio/game_over.wav" id="3_2ryv4"]
 
 [node name="GameOver" type="Control"]
@@ -26,8 +26,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "खेल समाप्त"
-label_settings = ExtResource("1_7w8o4")
+text = "Game Over"
+label_settings = ExtResource("2_3p51q")
 
 [node name="SpaceLabel" type="Label" parent="."]
 visible = false
@@ -43,13 +43,15 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Spacebar दबाए"
-label_settings = ExtResource("1_7w8o4")
+text = "Press Spacebar"
+label_settings = ExtResource("2_3p51q")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2ryv4")
+volume_db = -35.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

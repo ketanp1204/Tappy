@@ -1,4 +1,5 @@
 extends Control
+signal load_options
 
 @onready var label = $MC/Label
 
@@ -8,4 +9,13 @@ func _ready():
 
 
 func _on_score_updated() -> void:
-	label.text = HindiNumerals.get_hindi_num_string(ScoreManager.get_score())
+	label.text = str(ScoreManager.get_score())
+
+
+func open_options():
+	# pause the game
+	get_tree().paused = true
+	
+	# emit options menu load signal
+	load_options.emit()
+	

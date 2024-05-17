@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsb2whjs7vxxa"]
+
+[ext_resource type="Texture2D" uid="uid://cfs6xkabci65g" path="res://assets/ui/ui_grabber.png" id="2_0cqa6"]
+[ext_resource type="LabelSettings" uid="uid://hhujucp2881y" path="res://assets/theme_settings/lg_label_red_32.tres" id="2_ds5mq"]
+[ext_resource type="Script" path="res://scenes/options_menu/ui_nodes/slider_menu_option.gd" id="3_2enk0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl8yi"]
+content_margin_top = 5.0
+content_margin_bottom = 0.0
+bg_color = Color(0.501125, 0.475662, 0.351209, 1)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.321569, 0.321569, 0.321569, 0)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oekng"]
+bg_color = Color(0.919361, 0.324185, 0.227805, 1)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.262933, 0.262932, 0.262932, 0)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[node name="SliderMenuOption" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_2enk0")
+title = "ध्वनि मात्रा"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "VOLUME"
+label_settings = ExtResource("2_ds5mq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("2_0cqa6")
+theme_override_icons/grabber_highlight = ExtResource("2_0cqa6")
+theme_override_icons/grabber_disabled = ExtResource("2_0cqa6")
+theme_override_icons/tick = ExtResource("2_0cqa6")
+theme_override_styles/slider = SubResource("StyleBoxFlat_rl8yi")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_oekng")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_oekng")
+
+[node name="CurrentValue" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_ds5mq")
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
